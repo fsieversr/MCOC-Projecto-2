@@ -5,6 +5,7 @@ Editor de Spyder
 Este es un archivo temporal
 """
 
+from numpy import *
 from matplotlib.pylab import *
 
 #unidades base SI (m, kg, s)
@@ -28,7 +29,7 @@ vim1 = zeros(2, dtype=double) #velocidad siguiente
 g = 9.81*_m/_s**2
 d = 1*_mm #radio particula 
 rho = 2700.*_kg/(_m**3)
-m = rho*(4./3./8.)*pi()*(d**3) #masa gramo de arena
+m = rho*(4./3./8.)*3.1416*(d**3) #masa gramo de arena
 Cd = 0.47 #coeficiente de drag para particula esferica
 
 #Inicializar Euler en x0 
@@ -81,7 +82,7 @@ while ti < tmax:
 #guardar ultimo paso    
 x_store[:, i] = xi
 v_store[:, i] = vi
-t_store[:, i] = ti  
+t_store[:] = ti  
 
 print x_store
 
