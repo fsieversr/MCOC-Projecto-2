@@ -35,7 +35,7 @@ Cd = 0.47 #coeficiente de drag para particula esferica
 #Inicializar Euler en x0 
 
 dt = 2e-6*_s #paso de tiempo
-tmax = 0.1*_s #tiempo maximo de simulación
+tmax = 0.1*_s #tiempo maximo de simulacion
 ti = 0*_s  #tiempo actual
 
 W = array([0, -m*g]) #peso
