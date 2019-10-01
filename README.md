@@ -1,7 +1,7 @@
 # MCOC-Projecto-2
 ### Integrantes 
 * Isidora Ahumada - [isidoraahumada](https://github.com/isidoraahumada)
-* Ángel Gabriel Derix - 
+* Ángel Gabriel Derix - [gabovzla90](https://github.com/gabovzla90)
 * Rodrigo Molina - [RodrigoMolina95](https://github.com/RodrigoMolina95)
 * Francisca Sievers - [fsieversr](https://github.com/fsieversr)
 ### Descripción Proyecto
