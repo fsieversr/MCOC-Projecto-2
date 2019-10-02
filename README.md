@@ -10,5 +10,10 @@ En este proyecto se va a simular el transporte de partícula de fondo. Se ocupar
 ### Validación
  
 ### Resultados
+Tras analizar los graficos obtenidos, se logra apreciar como en el primero tenemos un movimiento constante en el eje X, mientras que en el eje Y tenemos un movimiento de rebote en declive. Esto forma parte de lo esperado en una particula de fondo, en donde debido a distintas fuerzas externas esta se traslada a lo largo del rio y va rebotando con el fondo de este.
+En el segundo grafico tenemos tanto la recta azul como naranja, cada una representando la velocidad de la particula tanto en el eje X como en el Y respectivamente. Aunque no se logra apreciar (debido a las condicion de borde del eje Y) ambas velocidades aumentan de manera constante a traves del tiempo, lo que esta dentro de lo esperado debido a que se esta modelando bajo el supuesto de que solo hay velocidad (del agua) en el eje X y que para llevarlo un poco mas a la realidad se establece una velocidad limite (aumque muy baja) en el eje Y
+Por ultimo tenemos el tercer gafico que representa la aceleracion de la particula tanto en el eje X como en el Y, donde nuevamente vemos como ambas curvas se comportan de igual manera a traves del tiempo pero con distintas condiciones de borde
  
 ### Comentarios
+Los resultados obtenidos se mantienen dentro de lo esperado de una particula que a medida que pasa el tiempo va adquiriendo velocidad (debido al cauce del rio) y a la vez se va trasladando, donde este ultimo es producido por distintas fuerzas dando como resultado un movimiento de rebote. 
+El presente codigo esta pensado para una sola particula, por lo que en un futuro podria ser adaptado para "n" particulas, en donde el movimiento, posicion y aceleracion de cada una de ellas se puedan ver afectados por el choque entre ellas
