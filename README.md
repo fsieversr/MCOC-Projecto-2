@@ -1,4 +1,6 @@
 # MCOC-Projecto-2
+
+
 ### Integrantes 
 * Isidora Ahumada - [isidoraahumada](https://github.com/isidoraahumada)
 * Ángel Gabriel Derix - [gabovzla90](https://github.com/gabovzla90)
@@ -7,6 +9,12 @@
 ### Descripción Proyecto
 En este proyecto se va a simular el transporte de partícula de fondo. Se ocupará para la teoría el método Lagrangiano, donde en primer lugar se va analizar el comportamiento de una sola partícula y después se extrapolarán los resultados con sus respectivos cambios a una mayor cantidad de partículas.
 
+Para lograr esto se contaran con los siguientes supuestos:
+    • La partícula es esférica por tanto su cd= 0,47
+    • La velocidad en el eje X es de 10 m/s
+    • La velocidad en el eje Y es de 0,1 m/s
+    • El diámetro de la partícula es de 1mm
+    • El peso especifico de la partícula es de 2650 kg/m3
 ### Validación
  
 ### Resultados
