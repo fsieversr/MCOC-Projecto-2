@@ -7,9 +7,8 @@
 ### Descripción Proyecto
 En este proyecto se va a simular el transporte de partícula de fondo. Se ocupará para la teoría el método Lagrangiano, donde en primer lugar se va analizar el comportamiento de una sola partícula y después se extrapolarán los resultados con sus respectivos cambios a una mayor cantidad de partículas.
 
-###Validación###
+### Validación
  
-###Resultados###
+### Resultados
  
-###Comentarios###
-
+### Comentarios
