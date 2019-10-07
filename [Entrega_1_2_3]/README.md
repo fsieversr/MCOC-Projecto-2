@@ -22,12 +22,12 @@ Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida
 ### Resultados
 Gráfico 1
 
-![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/figure_1.png)
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_1_2_3]/figure_1.png)
 
 
 Gráfico 2
 
-![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/figure_2.png) 
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_1_2_3]/figure_2.png) 
 
 
 
