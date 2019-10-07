@@ -11,11 +11,11 @@ En este proyecto se va a simular el transporte de partícula de fondo. Se ocupar
     
 ### Validación
 Para lograr modelar el transporte de sedimentos se contaran con los siguientes supuestos:
-    * La partícula es esférica por tanto su cd= 0,47
-    * La velocidad en el eje X es de 10 m/s
-    * La velocidad en el eje Y es de 0,1 m/s
-    * El diámetro de la partícula es de 1mm
-    * El peso especifico de la partícula es de 2650 kg/m3
+* La partícula es esférica por tanto su cd= 0,47
+* La velocidad en el eje X es de 10 m/s
+* La velocidad en el eje Y es de 0,1 m/s
+* El diámetro de la partícula es de 1mm
+* El peso especifico de la partícula es de 2650 kg/m3
 Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida sobre la partícula. Para este caso, consideramos el peso, la fuerza de drag y la fuerza boyante. De esta forma obtenemos la aceleración de la partícula y además tenemos la velocidad inicial supuesta, a partir de estos datos y el comando odeint de Python, se procede a calcular la posición y velocidad de la partícula a través del tiempo. Estos resultados fueron graficados.  
 
 ### Resultados
