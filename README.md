@@ -20,6 +20,7 @@ Para lograr modelar el transporte de sedimentos se contaran con los siguientes s
 Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida sobre la partícula. Para este caso, consideramos el peso, la fuerza de drag y la fuerza boyante. De esta forma obtenemos la aceleración de la partícula y además tenemos la velocidad inicial supuesta, a partir de estos datos y el comando odeint de Python, se procede a calcular la posición y velocidad de la partícula a través del tiempo. Estos resultados fueron graficados.  
 
 ### Resultados
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/figure_1.png) 
 
 https://raw.githubusercontent.com/fsieversr/MCOC-Proyecto-2/master/figure_1.png
 
