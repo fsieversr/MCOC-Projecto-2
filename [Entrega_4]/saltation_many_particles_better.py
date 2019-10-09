@@ -96,7 +96,7 @@ def particula(z,t):
 					Fj = k_penal*delta*nij
 					Fi = -k_penal*delta*nij
 					zp [4*i+2:(4*i+4)] += Fi/m	
-					zp [4*j+2:(4*j+4)] += Fi/m
+					zp [4*j+2:(4*j+4)] += Fj/m
 	return zp 
 
 from scipy.integrate import odeint
@@ -124,6 +124,5 @@ for i in range(Nparticulas):
 ax.axhline(d/2,color="k",linestyle="--")
 
 show ()
-
 #
  
