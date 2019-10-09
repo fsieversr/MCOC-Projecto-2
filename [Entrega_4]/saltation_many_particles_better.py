@@ -12,7 +12,7 @@ _in = 2.54 *_cm
 
 #masa de una particula 
 g = 9.81 *_m/_s**2 #gravedad
-d = 0.56*_mm #diametro 
+d = 1*_mm #diametro 
 rho_agua = 1000.*_kg/(_m**3)
 rho_particula = 2650.*_kg/(_m**3)
 
@@ -68,7 +68,6 @@ def particula(z,t):
 		di = d
 		xi = z[4*i:(4*i+2)]
 		vi = z[4*i+2:(4*i+4)]
-
 		vf = velocity_field(xi) #evaluo la velocidad del flujo en la posicion de la particula 
 		vf_top = norm (velocity_field(xi + (di/2) *jhat)) #evaluo velocidad del flujo arriba
 		vf_bot = norm (velocity_field(xi - (di/2) *jhat)) #evaluo velocidad de flujo abajo 
@@ -80,6 +79,7 @@ def particula(z,t):
 
 		if xi [1] < 0: #evaluo el choque con el piso 
 			Fi[1]+= -k_penal*xi[1]
+			x[1] = 0
 
 		zp[4*i:(4*i+2)] = vi
 		zp[4*i+2:(4*i+4)] = Fi / m 
@@ -97,6 +97,7 @@ def particula(z,t):
 					Fi = -k_penal*delta*nij
 					zp [4*i+2:(4*i+4)] += Fi/m	
 					zp [4*j+2:(4*j+4)] += Fj/m
+
 	return zp 
 
 from scipy.integrate import odeint
@@ -124,5 +125,5 @@ for i in range(Nparticulas):
 ax.axhline(d/2,color="k",linestyle="--")
 
 show ()
+
 #
- 
