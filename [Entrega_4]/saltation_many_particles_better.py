@@ -79,7 +79,7 @@ def particula(z,t):
 
 		if xi [1] < 0: #evaluo el choque con el piso 
 			Fi[1]+= -k_penal*xi[1]
-			x[1] = 0
+			xi[1] = 0
 
 		zp[4*i:(4*i+2)] = vi
 		zp[4*i+2:(4*i+4)] = Fi / m 
