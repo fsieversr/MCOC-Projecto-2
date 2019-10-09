@@ -120,29 +120,8 @@ for i in range(Nparticulas):
 	#for x, y in zip(xi, yi):
 	#	ax.add_artist(Circle(xy=(x,y),radius=d/2, color = col, alpha=0.7))
 
-#from scipy.integrate import odeint 
-#z0 = zeros(4)
-#z0[:2] = x0
-#z0[2:] = v0 
-#z = odeint(particula, z0, t)
-#x = z[:,:2]
-#v = z[:,2:]
+
 ax.axhline(d/2,color="k",linestyle="--")
 #figure()
-#z = linspace(0, 15*d, 100)
-#VF = [velocity_field(zi) for zi in z]
-#plot (VF,z)
-#plot(x[:,0], x[:,1])
-#ylim([0,10*_mm])
-
-#figure()
-#subplot(2,1,1)
-#plot(t, x[:,0], label ="x")
-#plot(t, x[:,1], label ="y")
-#subplot(2,1,2)
-#plot(t,v[:,0], label ="vx")
-#plot(t,v[:,1], label ="vy")
 
 show ()
-
-#
