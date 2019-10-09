@@ -1,4 +1,5 @@
 from matplotlib.pylab import *
+import random
 #unidades base SI (m, kg, s)
 
 _m = 1.
@@ -11,7 +12,7 @@ _in = 2.54 *_cm
 
 #masa de una particula 
 g = 9.81 *_m/_s**2 #gravedad
-d = 1*_mm #diametro 
+d = 0.56*_mm #diametro 
 rho_agua = 1000.*_kg/(_m**3)
 rho_particula = 2650.*_kg/(_m**3)
 
@@ -34,7 +35,7 @@ m = rho_particula*V
 W = array([0, -m*g])
 #fB = array([0, rho_agua*V*g])
 
-t = arange(0, tmax, dt)
+t = arange(0,tmax,dt)
 Nt = len(t)
 
 norm = lambda v: sqrt(dot(v,v))
@@ -124,3 +125,5 @@ ax.axhline(d/2,color="k",linestyle="--")
 
 show ()
 
+#
+ 
