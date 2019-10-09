@@ -16,13 +16,13 @@ rho_agua = 1000.*_kg/(_m**3)
 rho_particula = 2650.*_kg/(_m**3)
 
 dt = 0.001*_s  #paso de tiempo
-tmax = 0.1*_s #tiempo maximo de simulacion
+tmax = 0.5*_s #tiempo maximo de simulacion
 ti = 0.*_s  #tiempo actual
 
-Nparticulas = 5 
+Nparticulas = 3
 
 x0 = 10*d*rand(Nparticulas)
-y0 = 3*d*rand(Nparticulas) + d/2
+y0 = 3*d*rand(Nparticulas) + d
 
 vx0 = rand(Nparticulas)/2
 vy0 = rand(Nparticulas)/2
@@ -53,13 +53,13 @@ ustar = 0.14
 def velocity_field(x):
 	z = x[1] /d
 	if z > 1./30:
-		uf = ustar *log (30. * z)/0.41
+		uf = ustar*log (30.*z)/0.41
 	else :
 		uf = 0 
 	return array ([uf,0])	
 
 vfx = velocity_field([0,4*d])[0]
-k_penal = 1000*0.5*Cd*rho_agua*A*norm(vfx)**2/(1*_mm) 
+k_penal = 100*0.5*Cd*rho_agua*A*norm(vfx)**2/(1*_mm) 
 def particula(z,t):
 	zp = zeros (4*Nparticulas)
 	
@@ -80,8 +80,8 @@ def particula(z,t):
 		if xi [1] < 0: #evaluo el choque con el piso 
 			Fi[1]+= -k_penal*xi[1]
 
-		zp[4*i :(4*i+2)] = vi
-		zp[4*i+2: (4*i+4)] = Fi / m 
+		zp[4*i:(4*i+2)] = vi
+		zp[4*i+2:(4*i+4)] = Fi / m 
 	
 	for i in range (Nparticulas):
 		xi = z[4*i:(4*i+2)] #calculo posicion de particula i 
@@ -114,7 +114,7 @@ ax = gca() #linea suelo
 for i in range(Nparticulas):
 	xi = z [:, 4*i]
 	yi = z[:, 4*i+1]
-	col = rand (3)
+	col = rand (4)
 	#plot (xi[0], yi[0], "o", color ="r")
 	plot (xi,yi,"--.", color=col)
 	#for x, y in zip(xi, yi):
