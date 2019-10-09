@@ -58,22 +58,22 @@ def velocity_field(x):
 		uf = 0 
 	return array ([uf,0])	
 
-vfx = velocity_field([0, 4*d])[0]
+vfx = velocity_field([0,4*d])[0]
 k_penal = 1000*0.5*Cd*rho_agua*A*norm(vfx)**2/(1*_mm) 
 def particula(z,t):
 	zp = zeros (4*Nparticulas)
 	
 	for i in range (Nparticulas):
 		di = d
-		xi = z[4*i: (4*i+2)]
-		vi = z[4*i+2 : (4*i+4)]
+		xi = z[4*i:(4*i+2)]
+		vi = z[4*i+2:(4*i+4)]
 
 		vf = velocity_field(xi) #evaluo la velocidad del flujo en la posicion de la particula 
 		vf_top = norm (velocity_field(xi + (di/2) *jhat)) #evaluo velocidad del flujo arriba
 		vf_bot = norm (velocity_field(xi - (di/2) *jhat)) #evaluo velocidad de flujo abajo 
 		vrel = vf - vi #se calcula velocidad relativa
 		fD = (0.5*Cd*alpha*rho_agua*norm(vrel)*A)*vrel #coeficiente de drag 
-		fL = (0.5*CL*alpha*rho_agua*(vf_top**2 - vf_bot**2))*jhat #fuerza lift 
+		fL = (0.5*CL*alpha*rho_agua*(vf_top**2 - vf_bot**2)*A)*jhat #fuerza lift 
 
 		Fi = W + fD + fL
 
@@ -123,3 +123,4 @@ for i in range(Nparticulas):
 ax.axhline(d/2,color="k",linestyle="--")
 
 show ()
+
