@@ -1,5 +1,4 @@
-# MCOC-Projecto-2
-##Entrega_4
+# MCOC-Projecto-2: Entrega 4
 
 ### Integrantes 
 * Isidora Ahumada - [isidoraahumada](https://github.com/isidoraahumada)
