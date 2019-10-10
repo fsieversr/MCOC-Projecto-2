@@ -1,3 +1,4 @@
+
 from matplotlib.pylab import *
 import random
 #unidades base SI (m, kg, s)
@@ -19,7 +20,7 @@ rho_particula = 2650.*_kg/(_m**3)
 dt = 0.001*_s  #paso de tiempo
 tmax = 0.5*_s #tiempo maximo de simulacion
 ti = 0.*_s  #tiempo actual
-
+print tmax/dt
 Nparticulas = 3
 
 x0 = 10*d*rand(Nparticulas)
@@ -113,9 +114,14 @@ print "fin"
 fig = figure ()
 ax = gca() #linea suelo
 for i in range(Nparticulas):
-	xi = z [:, 4*i]
+	xi = z[:, 4*i]
 	yi = z[:, 4*i+1]
-	col = rand (4)
+	col = rand(4)
+	for j in range(int(tmax/dt)): 
+		if j%6 == 0: 
+			circle = plt.Circle((xi[j], yi[j]), d/2, color ='r', clip_on=True)
+		ax.add_artist(circle)	
+		
 	#plot (xi[0], yi[0], "o", color ="r")
 	plot (xi,yi,"--.", color=col)
 	#for x, y in zip(xi, yi):
@@ -125,4 +131,3 @@ ax.axhline(d/2,color="k",linestyle="--")
 
 show ()
 
-#
