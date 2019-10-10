@@ -129,7 +129,7 @@ for i in range(Nparticulas):
 ax.axhline(d/2,color="k",linestyle="--")
 plt.xlabel("Avance particula direccion X (mm)")
 plt.ylabel("Altura particula direccion Y (mm)")
-plt.title("Movimiento de particulas (plano XY)")
+plt.title("Posicion de particulas (plano XY)")
 plt.legend()
 
 show ()
