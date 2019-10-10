@@ -127,6 +127,10 @@ for i in range(Nparticulas):
 	#	ax.add_artist(Circle(xy=(x,y),radius=d/2, color = col, alpha=0.7))
 
 ax.axhline(d/2,color="k",linestyle="--")
+plt.xlabel("Avance particula direccion X (mm)")
+plt.ylabel("Altura particula direccion Y (mm)")
+plt.title("Movimiento de particulas (plano XY)")
+plt.legend()
 
 show ()
 
