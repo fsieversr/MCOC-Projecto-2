@@ -7,7 +7,7 @@
 * Rodrigo Molina - [RodrigoMolina95](https://github.com/RodrigoMolina95)
 * Francisca Sievers - [fsieversr](https://github.com/fsieversr)
 ### Descripción Proyecto
-En este proyecto se va a simular el transporte de partícula de fondo. Se ocupará para la teoría el método Lagrangiano, donde en primer lugar se va analizar el comportamiento de una sola partícula y después se extrapolarán los resultados con sus respectivos cambios a una mayor cantidad de partículas.
+En este proyecto se va a simular el transporte de varias particulas debido a un flujo de agua. Ademas de considerar el movimiento debido a la propia fuerza del rio, tambien se modelara el eventual choque de las particulas entre si y de estas con el suelo
     
 ### Validación
 Para lograr modelar el transporte de sedimentos se contaran con los siguientes supuestos:
