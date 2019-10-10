@@ -20,4 +20,4 @@ Además tiene una tarjeta gráfica Intel HD Graphic 6000 de 1536 mb de memoria.
 
 A continuación se muestra un gráfico, el cual presenta la cantidad de partículas que se utilizó y el tiempo que tardó en gráficar los resultados. Se fue variando el número de partículas entre 1, 3 5, 8, 12, 15, 18, 20, 23, y 25, lo que resulto el siguiente gráfico:
 
-
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/.png)
