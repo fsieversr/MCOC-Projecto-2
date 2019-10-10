@@ -12,3 +12,5 @@ Para el código, se consideraron los siguientes supuestos:
 *	La velocidad en el eje Y es de 0,1 m/s.
 *	El diámetro de la partícula es de 1mm.
 *	El peso especifico de la partícula es de 2650 kg/m3.
+
+
