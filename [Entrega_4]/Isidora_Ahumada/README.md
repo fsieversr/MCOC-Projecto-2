@@ -23,6 +23,8 @@ A continuación se muestra un gráfico, el cual presenta la cantidad de partícu
 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/Isidora_Ahumada/graficotiempo.png)
 
+Analizando este gráfico se tiene que el rendimiento del programa se resume en que mientras más particulas tenga que modelar, más tiempo se demora en obtener el gráfico de la posición. Para mejorar el desempeño se podria hacer que las partículas cuando choquen se vayan por separado, es decir tomen caminos distintos. 
+
 ### Resultados 
 
 A continuación se muestra el gráfico de la posición de 3, 9 y 20 partículas respectivamente: 
@@ -32,4 +34,5 @@ A continuación se muestra el gráfico de la posición de 3, 9 y 20 partículas 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/Isidora_Ahumada/9particulas.png)
 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/Isidora_Ahumada/20particulas.png)
+
 
