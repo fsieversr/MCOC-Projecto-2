@@ -6,17 +6,17 @@
 * Rodrigo Molina - [RodrigoMolina95](https://github.com/RodrigoMolina95)
 * Francisca Sievers - [fsieversr](https://github.com/fsieversr)
 ### Descripción Proyecto
-En este proyecto se va a simular el transporte de varias particulas debido a un flujo de agua. Ademas de considerar el movimiento debido a la propia fuerza del rio, tambien se modelara el eventual choque de las particulas entre si y de estas con el suelo
-    
-### Validación
+En este proyecto se va a simular el transporte de varias particulas debido a un flujo de agua. Ademas de considerar el movimiento debido a la propia fuerza del rio, tambien se modelara el eventual choque de las particulas entre si y de estas con el suelo.
+ 
 Para lograr modelar el transporte de sedimentos se contaran con los siguientes supuestos:
-* La partícula es esférica por tanto su cd= 0,47.
-* La velocidad en el eje X es de 10 m/s.
-* La velocidad en el eje Y es de 0,1 m/s.
-* El diámetro de la partícula es de 1mm.
+* La partícula es esférica por tanto su Cd= 0,47.
+* Las partículas inician en posiciones aleatorias del río.
+* Las velocidades iniciales de las partículas son aleatorias.
+* Se asume un fluido con perfil de velocidad logarítmico.
+* El diámetro de la partícula es de 1 mm.
 * El peso especifico de la partícula es de 2650 kg/m3. 
  
-Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida sobre la partícula. Para este caso, consideramos el peso, la fuerza de drag y la fuerza boyante. De esta forma obtenemos la aceleración de la partícula y además tenemos la velocidad inicial supuesta, a partir de estos datos y el comando odeint de Python, se procede a calcular la posición y velocidad de la partícula a través del tiempo. Estos resultados fueron graficados.  
+Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida sobre la partícula. Para este caso, consideramos el peso, la fuerza de drag y la fuerzade lift. De esta forma obtenemos la aceleración de la partícula y además tenemos la velocidad inicial supuesta, a partir de estos datos y el comando odeint de Python, se procede a calcular la posición y velocidad de la partícula a través del tiempo. Además de esto se considera una constante k de resorte asociada al choque en el suelo y entre partículas. Estos resultados fueron graficados.  
 
 ### Resultados
 Analizando los graficos se logra apreciar como el movimiento de rebote de cada una va en declive a medida que avanza a lo largo del rio. Ademas se logra apreciarque a medida que transcurre el tiempo y la particulas avanzan, estas tienden a mantenerse a una cierta distancia del fondo del rio. Esto ultimo responde al perfil de velocidad de todo flujo de agua, en donde la velocidad del flujo que va pegado a alguno de los bordes es cero, por lo que sumado a un bajo peso de las particulas (debido a un diametro estimado en 0,56 mm) estas tienden a mantenerse ................
