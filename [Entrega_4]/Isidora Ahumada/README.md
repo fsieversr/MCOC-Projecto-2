@@ -12,6 +12,3 @@ Para el código, se consideraron los siguientes supuestos:
 *	La velocidad en el eje Y es de 0,1 m/s.
 *	El diámetro de la partícula es de 1mm.
 *	El peso especifico de la partícula es de 2650 kg/m3.
-*	Las posiciones iniciales de las partículas son aleatorias en base a la fórmula: 
-      x0 = 75*d*rand(Nparticulas)
-      y0 = 40*d*rand(Nparticulas) + d
