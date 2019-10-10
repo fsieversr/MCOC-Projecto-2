@@ -117,8 +117,8 @@ for i in range(Nparticulas):
 	xi = z[:, 4*i]
 	yi = z[:, 4*i+1]
 	col = rand(4)
-	for j in range(int(tmax/dt)): 
-		if j%6 == 0: 
+	for j in range(int(tmax/dt)): #marca cada 8 ptos la particula completa en rojo
+		if j%8 == 0: 
 			circle = plt.Circle((xi[j], yi[j]), d/2, color ='r', clip_on=True)
 		ax.add_artist(circle)	
 		
