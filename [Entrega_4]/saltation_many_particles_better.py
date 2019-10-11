@@ -106,16 +106,16 @@ def particula(z,t):
 		Fh = fuerzas_hidrodinamicas(xi,vi, di, A, m)
 
 		if xi[1] < fondo(xi[0]): #evaluo el choque con el piso
-			if xi[0]%d < d/2:
-				xsuelo= d/2 - (xi[0]%d) + xi[0]
+			if xi[1] > 0:
+				xsuelo = round(xi[0]/d)*d
 				rij = xi - [xsuelo, 0] #vector entre particulas
-				delta = di - norm(rij) #espacio que se cruzan las particulas
-			if xi[0]%d > d/2:
-				xsuelo=  (xi[0]%d) - d/2 + xi[0]
-				rij = xi - [xsuelo, 0] #vector entre particulas
-				delta = di - norm(rij)				
+				if norm(rij) < d:
+					delta = di - norm(rij)
+					nij = rij /norm (rij)				
 
-			Fh[1]+= -k_penal*xi[1]#*delta 
+					Fh += -k_penal*delta*nij 
+			else: 
+				Fh[1]+= -k_penal*xi[1]
 
 		zp[4*i:(4*i+2)] = vi
 		zp[4*i+2:(4*i+4)] = Fh / m 
