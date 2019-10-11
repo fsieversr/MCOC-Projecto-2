@@ -107,15 +107,15 @@ def particula(z,t):
 
 		if xi[1] < fondo(xi[0]): #evaluo el choque con el piso
 			if xi[1] > 0:
-				xsuelo = round(xi[0]/d)*d
+				xsuelo = round(xi[0]/d)*d+d/2
 				rij = xi - [xsuelo, 0] #vector entre particulas
 				if norm(rij) < d:
 					delta = di - norm(rij)
 					nij = rij /norm (rij)				
 
-					Fh += -k_penal*delta*nij 
+					Fh += k_penal*delta*nij 
 			else: 
-				Fh[1]+= -k_penal*xi[1]
+				Fh[1]+= k_penal*xi[1]
 
 		zp[4*i:(4*i+2)] = vi
 		zp[4*i+2:(4*i+4)] = Fh / m 
@@ -163,11 +163,11 @@ for i in range(Nparticulas):
 	#for x, y in zip(xi, yi):
 	#	ax.add_artist(Circle(xy=(x,y),radius=d/2, color = col, alpha=0.7))
 
-#x = linspace(0, 1000*d,40000)
-#x_mod_d = (x % d) - d/2
-#y = sqrt((d/2)**2 - x_mod_d**2)
+x = linspace(0, 1000*d,40000)
+x_mod_d = (x % d) - d/2
+y = sqrt((d/2)**2 - x_mod_d**2)
 
-#plot(x, y)
+plot(x, y)
 
 
 ax.axhline(d/2,color="k",linestyle="--")
