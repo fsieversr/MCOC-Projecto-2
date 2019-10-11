@@ -14,23 +14,23 @@ _in = 2.54 *_cm
 
 #masa de una particula 
 g = 9.81 *_m/_s**2 #gravedad
-d = 1*_mm #diametro 
+d = 0.15*_mm #diametro 
 rho_agua = 1000.*_kg/(_m**3)
 rho_particula = 2650.*_kg/(_m**3)
 
-dt = 0.001*_s  #paso de tiempo
-tmax = 0.7*_s #tiempo maximo de simulacion
+dt = 0.0001*_s  #paso de tiempo
+tmax = 2*_s #tiempo maximo de simulacion
 ti = 0.*_s  #tiempo actual
-print tmax/dt
-Nparticulas = 1
+
 tau_star = 0.067   # Tau star (Shear stress)
 
-
-x0 = 75*d*rand(Nparticulas)
-y0 = 40*d*rand(Nparticulas) + d
-
-vx0 = rand(Nparticulas)/2
-vy0 = rand(Nparticulas)/2
+#importacion de condiciones iniciales
+data = load("initial_condition.npz")
+x0 = data["x0"]
+y0 = data["y0"]
+vx0 = data["vx0"]
+vy0 = data["vy0"]
+Nparticulas = data["Nparticulas"]
 
 A = pi*(d/2)**2
 V = (4./3.)*pi*(d/2)**3
@@ -59,11 +59,17 @@ ustar = sqrt(tau_star * g * Rp * d)		# uestrella de verdad
 
 def velocity_field(x):
 	z = x[1] /d
-	if z > 1./30:
-		uf = ustar*log (30.*z)/0.41
+	if z > 1/30.:
+		uf = ustar*log(30.*z)/0.41
+		uf = uf * (uf > 0)
 	else :
 		uf = 0 
 	return array ([uf,0])	
+
+def fondo(x):
+	x_mod_d = (x % d) - d/2
+	y = sqrt((d/2)**2 - x_mod_d**2)
+	return y
 
 def fuerzas_hidrodinamicas(x,v,d,area,masa):
 	xtop = x + (d/2)*jhat #posicion superior particulas
@@ -86,8 +92,8 @@ def fuerzas_hidrodinamicas(x,v,d,area,masa):
 	return Fh
 
 
-vfx = velocity_field([0,4*d])[0]
-k_penal = 0.5*Cd*rho_agua*A*norm(vfx)**2/(1*_mm) 
+vfx = velocity_field([0, 10*d])[0]
+k_penal = 0.5*Cd*rho_agua*A*norm(vfx)**2/(d/20)
 
 def particula(z,t):
 	zp = zeros (4*Nparticulas)
@@ -99,7 +105,7 @@ def particula(z,t):
 
 		Fh = fuerzas_hidrodinamicas(xi,vi, di, A, m)
 
-		if xi [1] < 0: #evaluo el choque con el piso 
+		if xi[1] < fondo(xi[0]): #evaluo el choque con el piso
 			Fh[1]+= -k_penal*xi[1]
 
 		zp[4*i:(4*i+2)] = vi
@@ -148,11 +154,11 @@ for i in range(Nparticulas):
 	#for x, y in zip(xi, yi):
 	#	ax.add_artist(Circle(xy=(x,y),radius=d/2, color = col, alpha=0.7))
 
-x = linspace(0, 1000*d,40000)
-x_mod_d = (x % d) - d/2
-y = sqrt((d/2)**2 - x_mod_d**2)
+#x = linspace(0, 1000*d,40000)
+#x_mod_d = (x % d) - d/2
+#y = sqrt((d/2)**2 - x_mod_d**2)
 
-plot(x, y)
+#plot(x, y)
 
 
 ax.axhline(d/2,color="k",linestyle="--")
