@@ -1,5 +1,7 @@
 from matplotlib.pylab import *
 import random
+from time import time
+start_time = time()
 #unidades base SI (m, kg, s)
 
 _m = 1.
@@ -17,13 +19,15 @@ rho_agua = 1000.*_kg/(_m**3)
 rho_particula = 2650.*_kg/(_m**3)
 
 dt = 0.001*_s  #paso de tiempo
-tmax = 0.5*_s #tiempo maximo de simulacion
+tmax = 0.7*_s #tiempo maximo de simulacion
 ti = 0.*_s  #tiempo actual
 print tmax/dt
 Nparticulas = 20
+tau_star = 0.067   # Tau star (Shear stress)
 
-x0 = 100*d*rand(Nparticulas)
-y0 = 30*d*rand(Nparticulas) + d
+
+x0 = 75*d*rand(Nparticulas)
+y0 = 40*d*rand(Nparticulas) + d
 
 vx0 = rand(Nparticulas)/2
 vy0 = rand(Nparticulas)/2
@@ -50,7 +54,9 @@ alpha = 1/(1 + R + Cm)
 ihat = array ([1,0]) #vectores unitarios
 jhat = array ([0,1])
 
-ustar = 0.14
+tau_cr = 0.22*Rp**(-0.6)+0.06*10**(-7*Rp**(-0.6))   # tau critico
+ustar = sqrt(tau_star * g * Rp * d)		# uestrella de verdad
+
 def velocity_field(x):
 	z = x[1] /d
 	if z > 1./30:
@@ -60,7 +66,7 @@ def velocity_field(x):
 	return array ([uf,0])	
 
 vfx = velocity_field([0,4*d])[0]
-k_penal = 100*0.5*Cd*rho_agua*A*norm(vfx)**2/(1*_mm) 
+k_penal = 0.5*Cd*rho_agua*A*norm(vfx)**2/(1*_mm) 
 def particula(z,t):
 	zp = zeros (4*Nparticulas)
 	
@@ -116,12 +122,12 @@ for i in range(Nparticulas):
 	xi = z[:, 4*i]
 	yi = z[:, 4*i+1]
 	col = rand(4)
-	#for j in range(int(tmax/dt)): #marca cada 8 ptos la particula completa en rojo
-		#if j%8 == 0: 
-		#	circle = plt.Circle((xi[j], yi[j]), d/2, color ='r', clip_on=True)
-		#ax.add_artist(circle)	
+	for j in range(int(tmax/dt)): #marca cada 8 ptos la particula completa en rojo
+		if j%8 == 0: 
+			circle = plt.Circle((xi[j], yi[j]), d/2, color ='r', clip_on=True)
+		ax.add_artist(circle)	
 		
-	#plot (xi[0], yi[0], "o", color ="r")
+	plot (xi[0], yi[0], "o", color ="r")
 	plot (xi,yi,"--.", color=col)
 	#for x, y in zip(xi, yi):
 	#	ax.add_artist(Circle(xy=(x,y),radius=d/2, color = col, alpha=0.7))
@@ -129,8 +135,10 @@ for i in range(Nparticulas):
 ax.axhline(d/2,color="k",linestyle="--")
 plt.xlabel("Avance particula direccion X (mm)")
 plt.ylabel("Altura particula direccion Y (mm)")
-plt.title("Posicion de particulas (plano XY)")
+plt.title("Movimiento de particulas (plano XY)")
 plt.legend()
 
+elapsed_time = time() - start_time
 show ()
+print("Elapsed time: %.10f seconds." % elapsed_time) 
 
