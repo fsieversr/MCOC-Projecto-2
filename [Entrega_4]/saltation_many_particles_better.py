@@ -106,9 +106,16 @@ def particula(z,t):
 		Fh = fuerzas_hidrodinamicas(xi,vi, di, A, m)
 
 		if xi[1] < fondo(xi[0]): #evaluo el choque con el piso
-			rij = xi - [0, fondo(xi[0])] #vector entre particulas
-			delta = d - norm(rij) #espacio que se cruzan las particulas
-			Fh[1]+= -k_penal*xi[1]*delta 
+			if xi[0]%d < d/2:
+				xsuelo= d/2 - (xi[0]%d) + xi[0]
+				rij = xi - [xsuelo, 0] #vector entre particulas
+				delta = di - norm(rij) #espacio que se cruzan las particulas
+			if xi[0]%d > d/2:
+				xsuelo=  (xi[0]%d) - d/2 + xi[0]
+				rij = xi - [xsuelo, 0] #vector entre particulas
+				delta = di - norm(rij)				
+
+			Fh[1]+= -k_penal*xi[1]#*delta 
 
 		zp[4*i:(4*i+2)] = vi
 		zp[4*i+2:(4*i+4)] = Fh / m 
@@ -146,10 +153,10 @@ for i in range(Nparticulas):
 	xi = z[:, 4*i]
 	yi = z[:, 4*i+1]
 	col = rand(4)
-#	for j in range(int(tmax/dt)): #marca cada 8 ptos la particula completa en rojo
-#		if j%8 == 0: 
-#			circle = plt.Circle((xi[j], yi[j]), d/2, color ='r', clip_on=True)
-#		ax.add_artist(circle)	
+	#for j in range(int(tmax/dt)): #marca cada 8 ptos la particula completa en rojo
+		#if j%50 == 0: 
+		#	circle = plt.Circle((xi[j], yi[j]), d/2, color=col, clip_on=True)
+		#ax.add_artist(circle)	
 		
 #	plot (xi[0], yi[0], "o", color ="r")
 	plot (xi/d,yi/d,"--.", color=col)
