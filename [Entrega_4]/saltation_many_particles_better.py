@@ -106,7 +106,9 @@ def particula(z,t):
 		Fh = fuerzas_hidrodinamicas(xi,vi, di, A, m)
 
 		if xi[1] < fondo(xi[0]): #evaluo el choque con el piso
-			Fh[1]+= -k_penal*xi[1]
+			rij = xi - [0, fondo(xi[0])]
+			delta = d - norm(rij)
+			Fh[1]+= -k_penal*xi[1]*delta
 
 		zp[4*i:(4*i+2)] = vi
 		zp[4*i+2:(4*i+4)] = Fh / m 
