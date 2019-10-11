@@ -22,7 +22,7 @@ dt = 0.001*_s  #paso de tiempo
 tmax = 0.7*_s #tiempo maximo de simulacion
 ti = 0.*_s  #tiempo actual
 print tmax/dt
-Nparticulas = 20
+Nparticulas = 1
 tau_star = 0.067   # Tau star (Shear stress)
 
 
@@ -65,8 +65,30 @@ def velocity_field(x):
 		uf = 0 
 	return array ([uf,0])	
 
+def fuerzas_hidrodinamicas(x,v,d,area,masa):
+	xtop = x + (d/2)*jhat #posicion superior particulas
+	xbot = x - (d/2)*jhat #posicion inferior particulas
+	vf = velocity_field(x + 0*jhat)
+
+	vrelf_top = abs(velocity_field(xtop)[0])
+	vrelf_bot = abs(velocity_field(xbot)[0])
+
+	vrel = vf - v
+
+	Cd = 0.47
+	fD = (0.5*Cd*alpha*rho_agua*norm(vrel)*area)*vrel
+
+	fL = (0.5*CL*alpha*rho_agua*(vrelf_top - vrelf_bot)*area)*vrel[0]*jhat
+	fW = (-masa*g)*jhat
+
+	Fh = fW + fD + fL
+
+	return Fh
+
+
 vfx = velocity_field([0,4*d])[0]
 k_penal = 0.5*Cd*rho_agua*A*norm(vfx)**2/(1*_mm) 
+
 def particula(z,t):
 	zp = zeros (4*Nparticulas)
 	
@@ -74,20 +96,14 @@ def particula(z,t):
 		di = d
 		xi = z[4*i:(4*i+2)]
 		vi = z[4*i+2:(4*i+4)]
-		vf = velocity_field(xi) #evaluo la velocidad del flujo en la posicion de la particula 
-		vf_top = norm (velocity_field(xi + (di/2) *jhat)) #evaluo velocidad del flujo arriba
-		vf_bot = norm (velocity_field(xi - (di/2) *jhat)) #evaluo velocidad de flujo abajo 
-		vrel = vf - vi #se calcula velocidad relativa
-		fD = (0.5*Cd*alpha*rho_agua*norm(vrel)*A)*vrel #coeficiente de drag 
-		fL = (0.5*CL*alpha*rho_agua*(vf_top**2 - vf_bot**2)*A)*jhat #fuerza lift 
 
-		Fi = W + fD + fL
+		Fh = fuerzas_hidrodinamicas(xi,vi, di, A, m)
 
 		if xi [1] < 0: #evaluo el choque con el piso 
-			Fi[1]+= -k_penal*xi[1]
+			Fh[1]+= -k_penal*xi[1]
 
 		zp[4*i:(4*i+2)] = vi
-		zp[4*i+2:(4*i+4)] = Fi / m 
+		zp[4*i+2:(4*i+4)] = Fh / m 
 	
 	for i in range (Nparticulas):
 		xi = z[4*i:(4*i+2)] #calculo posicion de particula i 
@@ -122,15 +138,22 @@ for i in range(Nparticulas):
 	xi = z[:, 4*i]
 	yi = z[:, 4*i+1]
 	col = rand(4)
-	for j in range(int(tmax/dt)): #marca cada 8 ptos la particula completa en rojo
-		if j%8 == 0: 
-			circle = plt.Circle((xi[j], yi[j]), d/2, color ='r', clip_on=True)
-		ax.add_artist(circle)	
+#	for j in range(int(tmax/dt)): #marca cada 8 ptos la particula completa en rojo
+#		if j%8 == 0: 
+#			circle = plt.Circle((xi[j], yi[j]), d/2, color ='r', clip_on=True)
+#		ax.add_artist(circle)	
 		
-	plot (xi[0], yi[0], "o", color ="r")
+#	plot (xi[0], yi[0], "o", color ="r")
 	plot (xi,yi,"--.", color=col)
 	#for x, y in zip(xi, yi):
 	#	ax.add_artist(Circle(xy=(x,y),radius=d/2, color = col, alpha=0.7))
+
+x = linspace(0, 1000*d,40000)
+x_mod_d = (x % d) - d/2
+y = sqrt((d/2)**2 - x_mod_d**2)
+
+plot(x, y)
+
 
 ax.axhline(d/2,color="k",linestyle="--")
 plt.xlabel("Avance particula direccion X (mm)")
