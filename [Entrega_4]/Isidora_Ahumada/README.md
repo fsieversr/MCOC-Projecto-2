@@ -37,5 +37,5 @@ Gráfico para 10 partículas
 
 ### Comentarios 
 
-El programa se resume en que mientras más particulas tenga que modelar, más tiempo se demora en obtener el gráfico de la posición. El tiempo aumenta exponencialmente, debido a que el código tarda mucho en analizar los choques de la partículas, por lo que una mejora podría ser que las particulas luego de chocar, tomen caminos distintos. Para 20 partículas el programa tarda más de 1 hora en realizar la simulación, por lo que se podría decir que ahi inicia el cuello de botella. 
+El programa se resume en que mientras más particulas tenga que modelar, más tiempo se demora en obtener el gráfico de la posición. El tiempo aumenta exponencialmente, debido a que el código tarda mucho en analizar los choques de la partículas, por lo que una mejora podría ser que las particulas luego de chocar, tomen caminos distintos. Para 20 partículas el programa tarda más de 1 hora en realizar la simulación, por lo que se podría decir que ahí inicia el cuello de botella. 
 
