@@ -37,7 +37,7 @@ Gráfico para 10 partículas
 
 Gráfico para 20 partículas 
 
-![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/20_particulas.png)
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/20_particulas1.png)
 
 
 
