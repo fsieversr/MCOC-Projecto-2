@@ -37,7 +37,7 @@ Gráfico para 10 partículas
 
 ### Comentarios 
 
-El programa se resume en que mientras más particulas tenga que modelar, más tiempo se demora en obtener el gráfico de la posición. Para mejorar el desempeño se podria hacer que las partículas cuando choquen se vayan por separado, es decir tomen caminos distintos. 
+El programa se resume en que mientras más particulas tenga que modelar, más tiempo se demora en obtener el gráfico de la posición. Para 20 partículas el programa tarda más de 1 hora en realizar la simulación. 
 
 
 
