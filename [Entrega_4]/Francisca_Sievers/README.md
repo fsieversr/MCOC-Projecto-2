@@ -21,7 +21,7 @@ Para poder obtener una noción del rendimiento del código, se midió el tiempo 
           10             606,6
           20             3538,1
           
-![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/[Francisca_Sievers]/grafico_rendimiento.png)         
+         
          
 ### Comentarios
  
