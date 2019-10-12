@@ -20,7 +20,19 @@ Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida
 
 ### Resultados
 
+Gráfico para 5 particulas
+
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/5_particulas.png)
+
+Gráfico para 10 particulas
+
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/10_particulas.png)
+
+Gráfico para 20 particulas 
+
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/20_particulas.png)
+
+
 
 
 Analizando los graficos vemos como en cada uno de ellos se mantiene un rebote constante a traves del tiempo y la distancia de cada una de las particulas. Si bien en ciertos momento pierden energia, estas la vuelven a adquirir nuevamente debido al rebote con el fondo y el choque entre ellas. 
