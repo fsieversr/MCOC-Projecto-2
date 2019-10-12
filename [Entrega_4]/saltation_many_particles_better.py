@@ -31,6 +31,7 @@ y0 = data["y0"]
 vx0 = data["vx0"]
 vy0 = data["vy0"]
 Nparticulas = data["Nparticulas"]
+print "Numero de particulas:", Nparticulas
 
 A = pi*(d/2)**2
 V = (4./3.)*pi*(d/2)**3
