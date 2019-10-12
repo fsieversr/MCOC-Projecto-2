@@ -20,15 +20,19 @@ Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida
 
 ### Resultados
 
-Gráfico para 5 particulas
+Gráfico para 2 partículas 
+
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/2_particulas.png)
+
+Gráfico para 5 partículas
 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/5_particulas.png)
 
-Gráfico para 10 particulas
+Gráfico para 10 partículas
 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/10_particulas.png)
 
-Gráfico para 20 particulas 
+Gráfico para 20 partículas 
 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/20_particulas.png)
 
