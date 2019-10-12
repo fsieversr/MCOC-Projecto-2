@@ -19,7 +19,7 @@ Para poder obtener una noción del rendimiento del código, se midió el tiempo 
           2              19,6
           5              122,6 
           10             606,6
-          20
+          20             3538,1
          
          
 ### Comentarios
