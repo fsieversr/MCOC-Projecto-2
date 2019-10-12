@@ -5,7 +5,7 @@ Datos del problema
 
 g = 9.81 *_m/_s**2 #gravedad#
 
-d = 1*_mm #diámetro# 
+d = 15*_mm #diámetro# 
 
 rho_agua = 1000.*_kg/(_m**3)
 
@@ -13,31 +13,21 @@ rho_partícula = 2650.*_kg/(_m**3)
 
 dt = 0.001*_s  #paso de tiempo#
 
-tmax = 0.7*_s #tiempo máximo de simulación#
+tmax = 2*_s #tiempo máximo de simulación#
 
 ti = 0.*_s  #tiempo actual#
 
 N.º de partículas vs Tiempo de ejecución(segundos)
 
-1     __  0,41 seg
+1__	1,23
 
-3     __  1,35 seg
+2__37,05
 
-5     __  3,54 seg
+5__	100,62
 
-8      __ 12,08 seg
+10__	319,38
 
-12    __  35,99 seg
-
-15    __  47,46 seg
-
-18   __   106,46 seg
-
-20   __   251,37 seg
-
-23   __   287,01 seg
-
-25    __  457,17 seg
+20__	1371,51
 
 
 El problema principal radica en que al haber un choque el dt de las partículas se hace muy pequeño para todas las partículas, por tanto ocupa mas memoria y esto tiempo, ademas que al graficar mas choques y partículas aumenta de forma exponencial el tiempo de ejecución.
