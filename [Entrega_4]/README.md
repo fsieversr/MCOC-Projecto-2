@@ -39,10 +39,11 @@ Gráfico para 20 partículas
 
 
 
-Analizando los graficos vemos como en cada uno de ellos se mantiene un rebote constante a traves del tiempo y la distancia de cada una de las particulas. Si bien en ciertos momento pierden energia, estas la vuelven a adquirir nuevamente debido al rebote con el fondo y el choque entre ellas. 
-Los choque entre particulas no se alcanzan a apreciar a simple vista debido el pequeño diametro de estas.
-Cabe mencionar ademas que las particulas dificilmente quedaran estaticas en el fondo del lecho debido al perfil de velocidad del flujo, si bien en el fondo del rio la velocidad es cero (debido al principio de Bernoulli), los puntos donde esta variable no se hace nula evitan que las particulas caigan a esta zona.
+Analizando los graficos vemos como en cada uno de ellos se mantiene un rebote constante a traves del tiempo y la distancia de cada una de las particulas.  
+
  
 ### Comentarios
-Los resultados obtenidos se mantienen dentro de lo esperado de una particula que a medida que pasa el tiempo va adquiriendo velocidad (debido al cauce del rio) y a la vez se va trasladando, donde este ultimo es producido por distintas fuerzas dando como resultado un movimiento de rebote. 
-El presente codigo esta pensado para una sola particula, por lo que en un futuro podria ser adaptado para "n" particulas, en donde el movimiento, posicion y aceleracion de cada una de ellas se puedan ver afectados por el choque entre ellas
+Los resultados obtenidos se mantienen dentro de lo esperado de una particula que a medida que pasa el tiempo va adquiriendo velocidad (debido al cauce del rio) y a la vez se va trasladando, donde este ultimo es producido el choque de las partículas con el fondo, lo que ejerce una fuerza en dirección contraria, el resultado de esto es un movimiento de rebote.  Si bien en ciertos momento pierden energia, estas la vuelven a adquirir nuevamente debido al rebote con el fondo y el choque entre ellas.
+Los choque entre particulas no se alcanzan a apreciar a simple vista debido el pequeño diametro de estas.
+Cabe mencionar además, que las particulas dificilmente quedarán estáticas en el fondo del lecho debido al perfil de velocidad del flujo, si bien en el fondo del rio la velocidad es cero (debido al principio de Bernoulli), los puntos donde esta variable no se hace nula evitan que las particulas caigan a esta zona. 
+
