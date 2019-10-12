@@ -22,15 +22,15 @@ El rendimiento del computador se analizó midiendo el tiempo que se demoró en s
 
 Gráfico para 2 partículas 
 
-![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/2_particulas.png)
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/Isidora_Ahumada/2_particulas.png)
 
 Gráfico para 5 partículas
 
-![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/5_particulas.png)
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/Isidora_Ahumada/5_particulas.png)
 
 Gráfico para 10 partículas 
 
-![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/10_particulas.png)
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/Isidora_Ahumada/10_particulas.png)
 
 
 
