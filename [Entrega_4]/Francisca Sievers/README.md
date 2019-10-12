@@ -2,8 +2,11 @@
 
 ### Especificaciones Computador
 Modelo Computador: HP Pavillion 5JREP0C
+ 
 Procesador: i3-3217U 1.80 GHz
+ 
 Memoria RAM: 4 GB
+ 
 Sistema operativo: Windows 10 64bits
 
 ### Rendimiento
