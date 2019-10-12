@@ -19,7 +19,7 @@ Para lograr modelar el transporte de sedimentos se contaran con los siguientes s
 Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida sobre la partícula. Para este caso, consideramos el peso, la fuerza de drag (arrastre) y la fuerzade lift (fuerza de levante). De esta forma obtenemos la aceleración de la partícula y además tenemos la velocidad inicial supuesta, a partir de estos datos y el comando odeint de Python, se procede a calcular la posición y velocidad de la partícula a través del tiempo. Además de esto se considera una constante k de resorte asociada al choque en el suelo y entre partículas. Estos resultados fueron graficados y de acuerdo a ellos se establecio si el codigo era el correcto o no  
 
 ### Validación
-Para validar los resultados, se tomaron como base los gráficos entregados para 2, 5, 10 y 20 partículas. El código se modeló con las mismas condiciones iniciales entregadas en ambos casos y los mismos parámetros. Se observa que los gráficos resultan similares en cuanto a la forma de la trayectoria de las particulas, sin embargo en el código simulado las partículas llegan a puntos más altos que en los graficos de validación.
+Para validar los resultados, se tomaron como base los gráficos entregados para 2, 5, 10 y 20 partículas. El código se modeló con las mismas condiciones iniciales entregadas en ambos casos y los mismos parámetros. Se observa que los gráficos resultan similares en cuanto a la forma de la trayectoria de las particulas, sin embargo en el código simulado las partículas llegan a puntos más altos que en los graficos de validación, esto debe ser por el choque contra el suelo ejerce una fuerza mayor en la modelación. 
 
 ### Resultados
 
