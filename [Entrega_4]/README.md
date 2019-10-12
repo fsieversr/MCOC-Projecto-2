@@ -13,10 +13,10 @@ Para lograr modelar el transporte de sedimentos se contaran con los siguientes s
 * Las partículas inician en posiciones aleatorias del río.
 * Las velocidades iniciales de las partículas son aleatorias.
 * Se asume un fluido con perfil de velocidad logarítmico.
-* El diámetro de la partícula es de 1 mm.
+* El diámetro de la partícula es de 0.56 mm.
 * El peso especifico de la partícula es de 2650 kg/m3. 
  
-Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida sobre la partícula. Para este caso, consideramos el peso, la fuerza de drag y la fuerzade lift. De esta forma obtenemos la aceleración de la partícula y además tenemos la velocidad inicial supuesta, a partir de estos datos y el comando odeint de Python, se procede a calcular la posición y velocidad de la partícula a través del tiempo. Además de esto se considera una constante k de resorte asociada al choque en el suelo y entre partículas. Estos resultados fueron graficados.  
+Además se ocupó la ecuación F=ma, donde F es la sumatoria de fuerzas ejercida sobre la partícula. Para este caso, consideramos el peso, la fuerza de drag (arrastre) y la fuerzade lift (fuerza de levante). De esta forma obtenemos la aceleración de la partícula y además tenemos la velocidad inicial supuesta, a partir de estos datos y el comando odeint de Python, se procede a calcular la posición y velocidad de la partícula a través del tiempo. Además de esto se considera una constante k de resorte asociada al choque en el suelo y entre partículas. Estos resultados fueron graficados y de acuerdo a ellos se establecio si el codigo era el correcto o no  
 
 ### Resultados
 Analizando los graficos vemos como en cada uno de ellos se mantiene un rebote constante a traves del tiempo y la distancia de cada una de las particulas. Si bien en ciertos momento pierden energia, estas la vuelven a adquirir nuevamente debido al rebote con el fondo y el choque entre ellas. 
