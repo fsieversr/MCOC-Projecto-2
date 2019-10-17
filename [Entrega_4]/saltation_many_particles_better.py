@@ -93,7 +93,7 @@ def fuerzas_hidrodinamicas(x,v,d,area,masa):
 	return Fh
 
 elapsed_time1 = time() - start_time
-print("Elapsed time1: %.10f seconds." % elapsed_time)
+print("Elapsed time1: %.10f seconds." % elapsed_time1)
 
 vfx = velocity_field([0, 10*d])[0]
 k_penal = 0.5*Cd*rho_agua*A*norm(vfx)**2/(d/20)
@@ -139,7 +139,7 @@ def particula(z,t):
 
 	return zp 
 elapsed_time2 = time() - start_time
-print("Elapsed time2: %.10f seconds." % elapsed_time)
+print("Elapsed time2: %.10f seconds." % elapsed_time2)
 
 from scipy.integrate import odeint
 z0 = zeros (4*Nparticulas)
@@ -184,4 +184,3 @@ plt.legend()
 elapsed_time = time() - start_time
 show ()
 print("Elapsed time: %.10f seconds." % elapsed_time) 
-
