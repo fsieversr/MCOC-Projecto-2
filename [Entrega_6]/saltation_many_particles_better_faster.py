@@ -76,19 +76,28 @@ if doit:
 	while dt*k < int(tmax/dt-1)*dt: 
 
 		fout.write("{}".format(dt*k)) #escribo el paso actual de tiempo
-		savetxt(fout, zk, fmt='%.10e ', newline=" ") 
+
+
+		ti = time.time()				
+		savetxt(fout, zk, fmt='%.16e ', newline=" ") 
+		tf = time.time()
+
+		tiempo_bloque_1 += tf-ti
+
 		fout.write("\n")
 
 		if k % 100 == 0:
 			print "k = {}    t = {}  ".format(k, k*dt)
 		done *= 0
+
+		ti = time.time()
+
 			
 		for i in range (Nparticulas):
 			irange = slice(4*i, 4*i+4)
-			#print i 
-			#print irange
+			
 			zk_i = zk[irange]
-			#print "zk_i = ", zk_i
+			
 
 			di = d
 			if done[i] == 0:
@@ -122,8 +131,8 @@ if doit:
 					
 					zkm1_all = odeint (zp_M_particulas, zk_all, [dt*k, dt*(k+1)], args=(M,))
 
-					tf = time.time()
-					tiempo_bloque_1 += tf - ti
+					#tf = time.time()
+					#tiempo_bloque_1 += tf - ti
 
 					zkm1 [irange] = zkm1_all[1,0:4]
  
@@ -145,6 +154,11 @@ if doit:
 
 					zkm1[irange] = zkm1_i [1,0:4]
 					done [i] = 1
+
+		tf = time.time()
+
+		tiempo_bloque_2 += tf-ti 
+					
 		zk = zkm1
 		k += 1			
 
@@ -152,9 +166,11 @@ end = time.time()
 
 print "tiempo bloque 1: ", tiempo_bloque_1
 print "tiempo bloque 2: ", tiempo_bloque_2
-print "tiempo total: ", end - start					
+print "tiempo total: ", end - start		
+print "Tiempo de escritura es {}% del tiempo total.". format (tiempo_bloque_1/(end-start)*100)			
 
 fout.close ()
+
 
 
 
