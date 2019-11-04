@@ -1,7 +1,6 @@
 from matplotlib.pylab import *
 
 norm = lambda v: sqrt(dot(v, v)) #norma vector
-
 Nparticulas = 2
 
 #Unidades SI
@@ -25,8 +24,7 @@ Cm = 0.5
 CL = 0.2 #coeficiente de lif
 Rp = 73.
 
- 
-tau_star = 0.067
+ tau_star = 0.067
 
 R = (rho_particula/rho_agua -1)
 alpha = 1/(1 + R + Cm)
@@ -45,3 +43,13 @@ def velocity_field(x):
 	z = x[1] / d
 
 	if z > 1./30:
+         uf = ustar*log(30.*z)/0.41
+         uf = uf * (uf>0)
+	else:
+		uf = 0
+		
+	return array([uf,0])
+	
+vfx=velocity_field([0, 10*d])[0]
+A=pi*(d/2)**2
+k_penal=0.5*Cd*rho_agua*A*norm(vfx)**2/(d/20)
