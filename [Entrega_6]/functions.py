@@ -44,7 +44,7 @@ def fuerza_impacto_suelo(x,v,d):
 	# return Fi
 
 
-def zp_una_particula(z,t,d=d):
+def zp_una_particula(z,t,d=d):  #sumatoria de fuerzas para una particula para cuando no hay choque entre particulas
 	zp = zeros(4)
 	x = z[0:2]
 	v = z[2:4]
@@ -54,11 +54,11 @@ def zp_una_particula(z,t,d=d):
 	sumaF = Fh + Fi
 	zp[0:2] = v
 	zp[2:4] = sumaF/masa
-	return zp
+	return zp  #nueva velocidad y aceleracion
 
 
 
-def zp_todas_las_particulas(z,t):
+def zp_todas_las_particulas(z,t):   
 	zp = zeros(4 * Nparticulas)
 	for i in range(Nparticulas):
 		di = d
@@ -74,7 +74,7 @@ def zp_todas_las_particulas(z,t):
 	return zp
 
 
-def zp_M_particulas(z,t,M):
+def zp_M_particulas(z,t,M): #para ver la interaccion entre particulas
 	zp = zeros(4*M)
 	for i in range(M):
 		di = d
@@ -85,7 +85,7 @@ def zp_M_particulas(z,t,M):
 	return z|p
 
 
-def zp_choque_M_particulas(z,t,M):
+def zp_choque_M_particulas(z,t,M): #funcion de sumatorias de fuerzas, se le suma a cada particula su choque con las demas particulas
 	zp = zeros(4*M)
 	for i in range(M):
 		xi = z[4*i:(4*i+2)]
@@ -102,6 +102,6 @@ def zp_choque_M_particulas(z,t,M):
 				nij = rij / norm_rij
 				Fj = k_penal * delta * nij
 				Fi = -Fj
-				zp[4*i+2:(4*i-4)] += Fi/masa_i
+				zp[4*i+2:(4*i-4)] += Fi/masa_i #aceleracion de cada particula
 				zp[4*j+2:(4*j+4)] += Fj/masa_j
 	return zp
