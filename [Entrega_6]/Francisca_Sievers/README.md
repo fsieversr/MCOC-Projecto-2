@@ -12,7 +12,7 @@ Sistema operativo: Windows 10 64bits.
 
 ### Rendimiento
  
-Para poder obtener una noción del rendimiento del código, se midió el tiempo que demoró el computador en simular distintos números de partículas. Estos datos se presentan a continuación.
+Para poder obtener una noción del rendimiento del código, se midió el tiempo que demoró el computador en simular distintos números de partículas, se muestra el caso integrando todas las partículas con el mismo salto de tiempo y el caso donde se integran separadas. Estos datos se presentan a continuación.
 
  
     N° Particulas       Tiempo[s]
@@ -21,12 +21,22 @@ Para poder obtener una noción del rendimiento del código, se midió el tiempo 
           10             606,6
           20             3538,1
           
+Separando los integrados los resultados son los siguientes.      
+
+    N° Particulas       Tiempo[s]
+          2              22,5
+          5              39,1 
+          10             72,3
+          20             146,7
+          50             422,7
+          80             685,1
+          100            1000,4
+          130            1287,8
+          
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_6]/Francisca_Sievers/grafico_rendimiento2.png)         
          
 ### Comentarios
  
-Se puede observar en el gráfico que a medida que aumentan las particulas, el tiempo aumenta de forma exponencial. Esto se debe a que el código demora mucho en analizar el choque entre las partículas. Este procedimiento sería el cuello de botella, ya que el codigo toma la posición de una partícula en un instante en el tiempo y compara con las posiciones del resto de las partículas para comprobar si se estas se cruzan. Por lo tanto, como se puede observar en el gráfico, mientras más particulas se simulen mayor será el tiempo que demora en correr el código.
-
-### Mejoras posibles
-
-Para mejorar el código se podría optimizar los dos ciclos for que sirve para recorrer una partícula con la otra. Para esto se podrían ocupar listas de compresión, esta es una forma de escribir el código en la que python la puede ejecutar más rápido. Se debería analizar esta opción en los ciclos de la modelación de choque para que de esta forma no tome tanto tiempo.
+Con la mejora del tiempo se observa en este gráfico una crecida lineal en cuanto al número de partículas y el tiempo que corre el código. Esto debe a la separación de los integradores para las partículas que chocan, ya que toma pasos de tiempos menores que si no chocaran. En el caso de que no choquen se integra con un intervalo de tiempo mayor, porque la trayectoria no varía en gran medida. 
+ 
+ Además lo mencionado anteriormente, el código funciona con mayor cantidad de partículas debido a que se guarda el archivo directamente como texto en el disco, de esta forma no se ve limitado por la cantidad de RAM del computador.
