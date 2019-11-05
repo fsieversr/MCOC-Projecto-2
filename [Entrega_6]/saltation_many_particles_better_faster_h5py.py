@@ -66,7 +66,32 @@ zk[3::4] = vy0
 
 #print Nt
 #exit (0)
-fout = open("resultado.txt", "w")
+import h5py
+
+fout = h5py.File("resultado.hdf5", "w")
+
+fout_parametros = fout.create_group("parametros")
+
+fout_parametros["dt"] = dt
+fout_parametros["g"] = g
+fout_parametros["d"] = d
+fout_parametros["rho_agua"] = rho_agua
+fout_parametros["rho_particula"] = rho_particula
+fout_parametros["tmax"] = tmax
+fout_parametros["Cd"] = Cd
+fout_parametros["Cm"] = Cm
+fout_parametros["CL"] = CL
+fout_parametros["Rp"] = Rp
+fout_parametros["tau_star"] = tau_star
+fout_parametros["R"] = R
+fout_parametros["alpha"] = alpha
+fout_parametros["ihat"] = ihat
+fout_parametros["jhat"] = jhat
+fout_parametros["tau_cr"] = tau_cr
+fout_parametros["A"] = A
+fout_parametros["k_penal"] = k_penal
+ 
+fout_z = fout.create_dataset("z", (Nt, 1 + 4*Nparticulas), dtype=double)
 
 done = zeros (Nparticulas,dtype=int32)
 impacting_set = zeros(Nparticulas, dtype=int32)
@@ -78,18 +103,18 @@ if doit:
 	while dt*k < int(tmax/dt-1)*dt: 
 
 		
-		fout.write("{} ".format(dt*k)) #escribo el paso actual de tiempo
+		#fout.write("{} ".format(dt*k)) #escribo el paso actual de tiempo
 
 
 		ti = time.time()				
-		savetxt(fout, zk, fmt='%.5e ', newline=" ") 
-		#fout_z[k,0] = dt * k
-		#fout_z[k,1:] = zk
+		#savetxt(fout, zk, fmt='%.5e ', newline=" ") 
+		fout_z[k,0] = dt * k
+		fout_z[k,1:] = zk
 		tf = time.time()
 
 		tiempo_bloque_1 += tf-ti
 
-		fout.write("\n")
+		#fout.write("\n")
 
 		if k % 100 == 0:
 			print "k = {}    t = {}  ".format(k, k*dt)

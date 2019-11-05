@@ -73,6 +73,27 @@ def zp_todas_las_particulas(z,t):
 	zp += zp_choque_M_particula(z,t,M = Nparticulas)
 	return zp
 
+def zp_choque_M_particulas(z,t,M): #funcion de sumatorias de fuerzas, se le suma a cada particula su choque con las demas particulas
+	zp = zeros(4*M)
+	for i in range(M):
+		xi = z[4*i:(4*i+2)]
+		di = d
+		area_i,vol_i,masa_i = propiedades_area_volumen_masa(di)
+		for j in range(i+1,M):
+			xj = z[4*j:(4*j+2)]
+			dj = d
+			rij = xj - xi
+			norm_rij = norm(rij)
+			if norm_rij < 0.5*(di+dj):
+				area_j,vol_j,masa_j = propiedades_area_volumen_masa(dj)
+				delta = 0.5 * (di+dj) - norm_rij
+				nij = rij / norm_rij
+				Fj = k_penal * delta * nij
+				Fi = -Fj
+				zp[4*i+2:(4*i-4)] += Fi/masa_i #aceleracion de cada particula
+				zp[4*j+2:(4*j+4)] += Fj/masa_j
+	return zp
+
 
 def zp_M_particulas(z,t,M): #para ver la interaccion entre particulas
 	zp = zeros(4*M)
@@ -81,27 +102,7 @@ def zp_M_particulas(z,t,M): #para ver la interaccion entre particulas
 		zi = z[4*i:(4*i+4)]
 		vi = z[4*i+2:(4*i+4)]
 		zp[4*i:(4*i+4)] = zp_una_particula(zi,t,di)
-	zp += zp_choque_M_particula(z,t,M=M)
+	zp += zp_choque_M_particulas(z,t,M=M)
 	return z|p
 
 
-def zp_choque_M_particulas(z,t,M): #funcion de sumatorias de fuerzas, se le suma a cada particula su choque con las demas particulas
-	zp = zeros(4*M)
-	for i in range(M):
-		xi = z[4*i:(4*i+2)]
-		di = d
-		area_i,vol_i,masa_i = propiedades_area_vol_masa(di)
-		for j in range(i+1,M):
-			xj = z[4*j:(4*j+2)]
-			dj = d
-			rij = xj - xi
-			norm_rij = norm(rij)
-			if norm_rij < 0.5*(di+dj):
-				area_j,vol_j,masa_j = propiedades_area_vol_masa(dj)
-				delta = 0.5 * (di+dj) - norm_rij
-				nij = rij / norm_rij
-				Fj = k_penal * delta * nij
-				Fi = -Fj
-				zp[4*i+2:(4*i-4)] += Fi/masa_i #aceleracion de cada particula
-				zp[4*j+2:(4*j+4)] += Fj/masa_j
-	return zp

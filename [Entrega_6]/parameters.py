@@ -24,11 +24,11 @@ Cm = 0.5
 CL = 0.2 #coeficiente de lif
 Rp = 73.
 
- tau_star = 0.067
+tau_star = 0.067
 
 R = (rho_particula/rho_agua -1)
 alpha = 1/(1 + R + Cm)
-jhat = array([1,0])
+ihat = array([1,0])
 jhat = array([0,1])
 
 tau_cr = 0.22*Rp**(-0.6)+0.06*10**(-7*Rp**(-0.6))   #tau critico

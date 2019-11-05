@@ -1,13 +1,13 @@
 from matplotlib.pylab import *
 
-datos = loadtxt ("resultado.txt")
+datos = loadtxt("resultado.txt")
 
 print datos.shape
 d = 0.15e-3
 
 Nparticulas = (datos.shape[1] - 1)/4
 
-figure ()
+figure()
 
 color = "#006B93"
 ax = gca ()
@@ -23,8 +23,8 @@ for i in range (Nparticulas):
 ax.set_ylim([0,5])
 ax.axhline(0.,color="k", linestyle="--")
 ax.axhline(1/30.,color="gray",linestyle="--")
-ax.set_xlabel("$\\dfrac{x}{d}$")	
-ax.set_ylabel("$\\dfrac{z}{d}$")
+#ax.set_xlabel("$\\dfrac{x}{d}$")	
+#ax.set_ylabel("$\\dfrac{z}{d}$")
 
 tight_layout ()
 
