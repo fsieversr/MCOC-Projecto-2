@@ -20,11 +20,11 @@ for i in range (Nparticulas):
 	ax.plot(xi[0::100], yi[0::100], "o", color=col)
 	ax.plot(xi,yi,"--",color=col,alpha=0.5)
 
-ax.set_ylim([0,5])
+#ax.set_ylim([0,5])
 ax.axhline(0.,color="k", linestyle="--")
 ax.axhline(1/30.,color="gray",linestyle="--")
-#ax.set_xlabel("$\\dfrac{x}{d}$")	
-#ax.set_ylabel("$\\dfrac{z}{d}$")
+ax.set_xlabel("x/d")	
+ax.set_ylabel("z/d")
 
 tight_layout ()
 

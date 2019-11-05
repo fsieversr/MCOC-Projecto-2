@@ -16,7 +16,7 @@ tiempo_bloque_2 = 0
 t = arange (0,tmax,dt)
 Nt = len(t)
 
-Nparticulas = 6
+Nparticulas = 80
 
 if reuse_initial_condition: 
 	print "Reusing initial conditions"
