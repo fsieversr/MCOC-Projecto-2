@@ -39,4 +39,6 @@ Separando los integrados los resultados son los siguientes.
  
 Con la mejora del tiempo se observa en este gráfico una crecida lineal en cuanto al número de partículas y el tiempo que corre el código. Esto debe a la separación de los integradores para las partículas que chocan, ya que toma pasos de tiempos menores que si no chocaran. En el caso de que no choquen se integra con un intervalo de tiempo mayor, porque la trayectoria no varía en gran medida. 
  
- Además lo mencionado anteriormente, el código funciona con mayor cantidad de partículas debido a que se guarda el archivo directamente como texto en el disco, de esta forma no se ve limitado por la cantidad de RAM del computador.
+Además de lo mencionado anteriormente, el código funciona con mayor cantidad de partículas debido a que se guarda el archivo directamente como texto en el disco, de esta forma no se ve limitado por la cantidad de RAM del computador.
+  
+ En la imagen se puede observar también una interrupción en la recta pasando de 80 a 100 partículas, esto se explica porque al momento de correr el código estaban ocurriendo más procesos en el computador que en los casos anteriores.
