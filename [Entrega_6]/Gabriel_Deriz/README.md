@@ -48,4 +48,4 @@ Con estos cambios se encontraron los siguientes resultados
           130            849,28
           
 
-![al text]
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/%5BEntrega_6%5D/Gabriel_Deriz/gr1.png)
