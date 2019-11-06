@@ -32,4 +32,4 @@ Tambien se creo un codigo por separado para los graficos, que toma el archivo de
 
 Con estos cambios se encontraron los siguientes resultados
 
-
+![al text]
