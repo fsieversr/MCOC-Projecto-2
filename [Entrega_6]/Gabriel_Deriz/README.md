@@ -17,6 +17,14 @@ tmax = 2*_s #tiempo máximo de simulación#
 
 ti = 0.*_s  #tiempo actual#
 
+tau_star= 0.067
+
+tau_cr= 0.0343326015316
+
+tau_star/tau_cr= 1.9514979061
+
+ustar= 0.08483576191677658
+
 N.º de partículas vs Tiempo de ejecución(segundos)
 
 1__	1,23
@@ -30,6 +38,4 @@ N.º de partículas vs Tiempo de ejecución(segundos)
 20__	1371,51
 
 
-El problema principal radica en que al haber un choque el dt de las partículas se hace muy pequeño para todas las partículas, por tanto ocupa mas memoria y esto tiempo, ademas que al graficar mas choques y partículas aumenta de forma exponencial el tiempo de ejecución.
-
-Una buena forma de mejorar el código es que el dt disminuya solamente en las partículas que choquen, pero para esto hay que trabajar cada partícula como independiente.
+El codigo se mejoro realizando cambios para que las particulas se revisaran por separado en caso de algun choque, tambien se guardaron los archivos en formato texto aparte para disminuir el consumo de memoria ram, para asi disminuir los tiempos de ejecucion y logar resultados lineales
