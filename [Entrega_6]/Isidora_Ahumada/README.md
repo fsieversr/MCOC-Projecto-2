@@ -31,10 +31,16 @@ Se muestra el caso integrando todas las partículas con el mismo salto de tiempo
           50             195.65   
           80             376.02
           100            462.25   
-          130
+          130            695.5   
+
+Se presenta a continuación el gráfico obtenido para 80 partículas. 
+
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_6]/Isidora_Ahumada/80_particulas.png)
 
 
 ### Comentarios 
 
-El programa se resume en que mientras más particulas tenga que modelar, más tiempo se demora en obtener el gráfico de la posición. El tiempo aumenta exponencialmente, debido a que el código tarda mucho en analizar los choques de la partículas, por lo que una mejora podría ser que las particulas luego de chocar, tomen caminos distintos. Para 20 partículas el programa tarda más de 1 hora en realizar la simulación, por lo que se podría decir que ahí inicia el cuello de botella. 
-
+Se puede notar que el código funciona para un mayor número de partículas, y con un menor tiempo de simulación en comparación a la entrega anterior. 
+Esto ocurre debido a que el código nuevo funciona separando la integración de las partículas que chocan y las que no, en cambio en el código anterior integraba todo tipo de partículas por igual. 
+En el gráfico partículas vs tiempo, se puede notar que crece linealmente la curva. Ya no tenemos una curva cuadrática, por lo que se consiguió que el rendimiento del código haya mejorado y sea más rápido que el anterior. 
+ 
