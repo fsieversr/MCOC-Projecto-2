@@ -12,7 +12,8 @@ Además tiene una tarjeta gráfica Intel HD Graphic 6000 de 1536 mb de memoria.
 
 ### Rendimiento 
 
-El rendimiento del computador se analizó midiendo el tiempo que se demoró en simular el programa para diferentes números de partículas. Se muestra el caso integrando todas las partículas con el mismo salto de tiempo y el caso donde se integran separadas particulas [Entrega 4]. Los resultados del tiempo se muestran a continuación: 
+El rendimiento del computador se analizó midiendo el tiempo que se demoró en simular el programa para diferentes números de partículas y comparandolos con el rendimiento del nuevo código [Entrega 6]. 
+Se muestra el caso integrando todas las partículas con el mismo salto de tiempo y el caso donde se integran todas las particulas juntas[Entrega 4]. Los resultados del tiempo se muestran a continuación: 
 
     N° Particulas       Tiempo[s]
           2              9.64
@@ -20,7 +21,18 @@ El rendimiento del computador se analizó midiendo el tiempo que se demoró en s
           10             278.2
           20             
  
- Ahora los resultados para las particulas integradas por separado
+ Ahora los resultados para las particulas integradas por separado, entre las que chocan y las que no [Entrega 6]:
+ 
+    N° Particulas       Tiempo[s]
+          2              6.94
+          5              16.33
+          10             33.83
+          20                
+          50
+          80               376.02
+          100
+          130
+ 
 ### Resultados
 
 Gráfico para 2 partículas 
@@ -34,6 +46,10 @@ Gráfico para 5 partículas
 Gráfico para 10 partículas 
 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_4]/Isidora_Ahumada/10_particulas.png)
+
+Gráfico para 80 partículas 
+
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_6]/Isidora_Ahumada/80_particulas.png)
 
 
 
