@@ -2,13 +2,15 @@
 
 ### Descripción Proyecto
 
-En este proyecto se implementará un modelo de simulación de transporte de sedimentos de partícula de fondo en base a un método lagrangiano, el cual analiza el comportamiento de cada una de las partículas.
+En este proyecto se implementará un modelo de simulación de transporte de sedimentos de partícula de fondo en base a un método lagrangiano, el cual analiza el comportamiento de cada una de las partículas. Se presentan a continuacion los resultados del código de la entrega 4 y a continuación los resultados con el nuevo código. 
 
 ### Computador 
 
 Mi computador es un MacBook Air de 13 pulgadas con un procesador i7 de 2.2GHz. Tiene 8 gb de memoria ram y un ssd de 500 gb. 
 Además tiene una tarjeta gráfica Intel HD Graphic 6000 de 1536 mb de memoria. 
 
+
+### Rendimiento 
 El rendimiento del computador se analizó midiendo el tiempo que se demoró en simular el programa para 2, 5, 10 y 20 particulas. Los resultados del tiempo se muestran a continuación: 
 
  
