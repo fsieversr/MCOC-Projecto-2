@@ -12,11 +12,15 @@ Rendimiento
 Para poder obtener una noción del rendimiento del código, se midió el tiempo que demoró el computador en simular distintos números de partículas. Estos datos se presentan a continuación.
 
  N° Particulas       Tiempo[s]
-          2              4.08
-          5              31.75 
-          10             143.5
-          20             1239.9
-
+          2              5.35
+          5              8.4 
+          10             18.9
+          20             39.4
+          50             115.9
+          80             205.8
+          100            294.3
+          130            429.0
+         
 Comentarios
 Se logra apreciar que a medida que aumentan las particulas el tiempo de ejecucion del programa aumenta de manera logaritmica, esto es debido a que debe procesar mayor cantidad de choques entre estas, llegando a chocar incluso a veces dos o mas particulas a misma tiempo
 
