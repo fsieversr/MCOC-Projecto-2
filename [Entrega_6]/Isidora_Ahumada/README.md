@@ -11,15 +11,16 @@ Además tiene una tarjeta gráfica Intel HD Graphic 6000 de 1536 mb de memoria.
 
 
 ### Rendimiento 
-El rendimiento del computador se analizó midiendo el tiempo que se demoró en simular el programa para 2, 5, 10 y 20 particulas. Los resultados del tiempo se muestran a continuación: 
 
- 
+El rendimiento del computador se analizó midiendo el tiempo que se demoró en simular el programa para diferentes números de partículas. Se muestra el caso integrando todas las partículas con el mismo salto de tiempo y el caso donde se integran separadas particulas [Entrega 4]. Los resultados del tiempo se muestran a continuación: 
+
     N° Particulas       Tiempo[s]
           2              9.64
           5              67.9
           10             278.2
           20             
-          
+ 
+ Ahora los resultados para las particulas integradas por separado
 ### Resultados
 
 Gráfico para 2 partículas 
