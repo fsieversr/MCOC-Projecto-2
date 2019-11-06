@@ -38,14 +38,23 @@ Tambien se creo un codigo por separado para los graficos, que toma el archivo de
 Con estos cambios se encontraron los siguientes resultados
 
  N° Particulas       Tiempo[s]
+ 
           2              7,97
+          
           5              17,68
+          
           10             56,91
+          
           20             79,63
+          
           50             239,62
+          
           80             426,59
+          
           100            562,41
+          
           130            849,28
+          
           
 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/%5BEntrega_6%5D/Gabriel_Deriz/gr1.png)
