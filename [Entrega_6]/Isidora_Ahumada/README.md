@@ -33,6 +33,9 @@ Se muestra el caso integrando todas las partículas con el mismo salto de tiempo
           100            462.25   
           130            695.5   
 
+![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_6]/Isidora_Ahumada/graficoparticulasvstiempo.png)
+
+
 Se presenta a continuación el gráfico obtenido para 80 partículas. 
 
 ![al text](https://github.com/fsieversr/MCOC-Proyecto-2/blob/master/[Entrega_6]/Isidora_Ahumada/80_particulas.png)
